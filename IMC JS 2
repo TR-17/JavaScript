@@ -1,0 +1,39 @@
+<html>
+<head>
+
+</head>
+<body>
+<script language="JavaScript">
+paragraphe= document.createElement ("p")
+document.body.appendChild(paragraphe)
+texte = document.createTextNode("taille :")
+paragraphe.appendChild(texte)
+inputVariable = document.createElement("input")
+inputVariable.setAttribute("id","input1")
+inputVariable.setAttribute("onchange","affiche()")
+document.body.appendChild(inputVariable)
+
+paragraphe = document.createElement("p")
+document.body.appendChild(paragraphe)
+texte = document.createTextNode("masse :")
+paragraphe.appendChild(texte)
+inputVariable2 = document.createElement("input")
+inputVariable2.setAttribute("id", "input2")
+inputVariable2.setAttribute("onchange", "affiche()")
+document.body.appendChild (inputVariable2)
+function affiche() {
+	taille = document.getElementById ("input1").value
+	masse = document.getElementById("input2").value
+	var imc = masse/(taille*taille)
+	paragraphe = document.createElement("p")
+	document.body.appendChild(paragraphe)
+	if (imc!=0) {
+		texte = document.createTextNode(imc)
+		paragraphe.appendChild(texte)
+	}
+}
+
+
+</script>
+</body>
+</html>
