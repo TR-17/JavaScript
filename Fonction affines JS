@@ -1,0 +1,41 @@
+<html>
+<head>
+
+</head>
+<body>
+<script language="JavaScript">
+paragraphe= document.createElement ("p")
+document.body.appendChild(paragraphe)
+texte = document.createTextNode("a :")
+paragraphe.appendChild(texte)
+inputVariable = document.createElement("input")
+inputVariable.setAttribute("id","input1")
+inputVariable.setAttribute("onchange","")
+document.body.appendChild(inputVariable) 
+
+paragraphe = document.createElement("p")
+document.body.appendChild(paragraphe)
+texte = document.createTextNode("b :")
+paragraphe.appendChild(texte)
+inputVariable2 = document.createElement("input")
+inputVariable2.setAttribute("id", "input2")
+inputVariable2.setAttribute("onchange", "affiche()")
+document.body.appendChild (inputVariable2)
+function affiche() {
+	for(var i=0;i<10;i++) {
+		a = document.getElementById ("input1").value
+		b = document.getElementById("input2").value
+		var fx= a*i+b*1
+		paragraphe = document.createElement("p")
+		document.body.appendChild(paragraphe)
+		texte = document.createTextNode(fx)
+		paragraphe.appendChild(texte)
+		console.log(i)
+	
+	}
+}
+
+
+</script>
+</body>
+</html>
