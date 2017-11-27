@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+<script language="JavaScript">
+	//Les Différentes variables ce situent ci-dessous
+	paragraphe = document.createElement("p")
+	document.body.appendChild(paragraphe)
+	texte = document.createTextNode("Entrer la valeur de 'a'")	
+	paragraphe.appendChild(texte)
+	inputVariable1 = document.createElement("input")
+	inputVariable1.setAttribute("id","input1")
+	inputVariable1.setAttribute("onchange","")
+	document.body.appendChild(inputVariable1) 
+	paragraphe = document.createElement("p")
+	document.body.appendChild(paragraphe)
+	texte = document.createTextNode("Entrer la valeur de 'b'")
+	paragraphe.appendChild(texte)
+	inputVariable2 = document.createElement("input")
+	inputVariable2.setAttribute("id", "input2")
+	inputVariable2.setAttribute("onchange", "entreA();entreB();affiche2()")
+	document.body.appendChild (inputVariable2)
+
+
+// Cette fonction sert a recuperer l'information mise dans la case pour inserer la valeur de 'a'
+
+	function entreA(){
+a = document.getElementById("input1").value
+}
+
+// Cette fonction sert a recuperer l'information mise dans la case pour inserer la valeur de 'b'
+
+function entreB() {
+b = document.getElementById("input2").value	
+}
+	
+
+	//Cette fonction permet le calcul de la fonction affine
+
+function calcul(i) {
+	
+	var f=a*i+b*1;
+
+	return f
+}
+
+// Cette fonction sert a appeler notre fonction de calcul et de la faire se répéter de 0 a 10
+function affiche2(){
+	for(var i=0;i<11;i++){
+	fy=calcul(i)
+	affiche(fy,i)
+	}
+
+}
+// Cette fonction sert a afficher les resultats de nos fonctions précédente
+function affiche(f,i) {
+	paragraphe = document.createElement("p")
+	document.body.appendChild(paragraphe)
+	texte = document.createTextNode("f("+i+")="+f)
+	paragraphe.appendChild(texte)
+
+}
+
+
+
+</script>
+</body>
+</html>
