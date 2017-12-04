@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+<script language="JavaScript">
+	//Les Differentes variables ce situent ci-dessous
+	paragraphe = document.createElement("p")
+	document.body.appendChild(paragraphe)
+	texte = document.createTextNode("Entrer la valeur de 'a'")	
+	paragraphe.appendChild(texte)
+	inputVariable1 = document.createElement("input")
+	inputVariable1.setAttribute("id","input1")
+	inputVariable1.setAttribute("onchange","")
+	document.body.appendChild(inputVariable1) 
+
+	paragraphe = document.createElement("p")
+	document.body.appendChild(paragraphe)
+	texte = document.createTextNode("Entrer la valeur de 'b'")
+	paragraphe.appendChild(texte)
+	inputVariable2 = document.createElement("input")
+	inputVariable2.setAttribute("id", "input2")
+	inputVariable2.setAttribute("onchange", "entreA();entreB();affichage2")
+	document.body.appendChild (inputVariable2)
+
+
+// Cette fonction sert a recuperer l'information mise dans la case pour inserer la valeur de 'a'
+
+	function entreA(){
+a = document.getElementById("input1").value
+a=a*1
+return a
+}
+
+// Cette fonction sert a recuperer l'information mise dans la case pour inserer la valeur de 'b'
+
+function entreB(){
+b = document.getElementById("input2").value	
+b=b*1
+return b
+}
+
+function somme(){
+
+c = 0
+return c
+}
+
+
+function calcul(a,b,c) {
+	while(a<b){
+		if(a%5==0) {
+			c = c+a
+			}
+		a = a+1
+	}
+
+	return c
+}
+
+function affiche(c){
+	
+	paragraphe = document.createElement("p")
+	document.body.appendChild(paragraphe)
+	texte = document.createTextNode(c)
+	paragraphe.appendChild(texte)
+
+}
+
+function affichage2(){
+	a = entreA()
+	b = entreB()
+	c = somme()
+	c = calcul(a,b,c)
+	affiche(c)
+}
+
+</script>
+</body>
+</html>
