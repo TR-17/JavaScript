@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+<script language="JavaScript">
+	//Les Differentes variables ce situent ci-dessous
+	paragraphe = document.createElement("p")
+	document.body.appendChild(paragraphe)
+	texte = document.createTextNode("Entrer la valeur de 'a'")	
+	paragraphe.appendChild(texte)
+	inputVariable1 = document.createElement("input")
+	inputVariable1.setAttribute("id","input1")
+	inputVariable1.setAttribute("onchange","")
+	document.body.appendChild(inputVariable1) 
+
+	paragraphe = document.createElement("p")
+	document.body.appendChild(paragraphe)
+	texte = document.createTextNode("Entrer la valeur de 'b'")
+	paragraphe.appendChild(texte)
+	inputVariable2 = document.createElement("input")
+	inputVariable2.setAttribute("id", "input2")
+	inputVariable2.setAttribute("onchange", "entreA();entreB();affiche2()")
+	document.body.appendChild (inputVariable2)
+
+
+// Cette fonction sert a recuperer l'information mise dans la case pour inserer la valeur de 'a'
+
+	function entreA(){
+a = document.getElementById("input1").value
+a=0
+return a
+}
+
+// Cette fonction sert a recuperer l'information mise dans la case pour inserer la valeur de 'b'
+
+function entreB(){
+b = document.getElementById("input2").value	
+b=0
+return b
+}
+
+
+
+
+function calcul(){
+	f=(6.67*y)*(10000*10000)/a*a
+
+	return f
+}
+function affiche(){
+	
+	paragraphe = document.createElement("p")
+	document.body.appendChild(paragraphe)
+	texte = document.createTextNode(f)
+	paragraphe.appendChild(texte)
+
+}
+function affiche2(){
+a=entreA()
+b=entreB()
+while(a<b){
+	f=calcul()
+	affiche()
+	a=a*2
+}
+affiche2()
+}
+
+
+
+</script>
+</body>
+</html>
